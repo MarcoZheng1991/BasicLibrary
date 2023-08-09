@@ -1,0 +1,20 @@
+﻿FUNCTION "PositiveCounter" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      InputSingal : Bool;
+   END_VAR
+
+   VAR_IN_OUT 
+      R_TRIG_DB {InstructionName := 'R_TRIG'; LibVersion := '1.0'} : R_TRIG;
+      "Counter" : DInt;
+   END_VAR
+
+
+BEGIN
+	#R_TRIG_DB(CLK:=#InputSingal);
+	IF #R_TRIG_DB.Q THEN
+	#Counter:=#Counter+1;
+	END_IF;
+END_FUNCTION
+
