@@ -1,4 +1,4 @@
-﻿FUNCTION "PositiveCounter" : Void
+﻿FUNCTION "PulseCounter" : Void
 { S7_Optimized_Access := 'TRUE' }
 VERSION : 0.1
    VAR_INPUT 
